@@ -1,0 +1,22 @@
+VPN
+====
+VPN Address : vpncolo.jasamarga.co.id 
+Username : smartek
+Password : uservpnsmartek!
+
+SSH
+====
+ip address Database :
+    - 10.14.3.57 
+    - Username : travoy
+    - Password : Tr4v0y!
+
+ip address API : 
+    - 10.14.3.58
+    - Username : travoy
+    - Password : Tr4v0y!
+
+Database
+=======
+    - Username : travoy
+    - Password : Tr4v0y!

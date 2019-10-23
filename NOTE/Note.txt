@@ -1,0 +1,40 @@
+
+Note : Terdapat 2 Aplikasi
+	1. Aplikasi Travoys Dikhususkan Untuk API
+	2. Aplikasi Travoys Untuk Dasboard
+
+- Untuk Database Disarankan Pakai Database Yang Sudah Ada Database Ada Di Dalam Folder API
+- Dan Pada 2 Aplikasi Tersebut Saat Configurasi Jangan Di Migration
+- Lakukan Migration jika ada penambahan table saja di Aplikasi Travoys Dashboard, Jangan Gunakan Migration 		di Travoys API
+- Untuk Pengetesan API silahkan gunakan postman list data api terdapat pada Aplikasi Travoys API
+
+Task
+Buat Di dalam applikasi API Travoysnya. 
+- Buat API Generate String Qr Code Dari Beberapa Attribute
+	1. id user
+	2. timestime Now
+	Note Generate String ini harus bisa di encrypt & decrypt.
+
+- Buat Decryptnya dari hasil generate string di awal tadi buat di dalam Aplikasi Travoys Dashboard 
+	di dalam menu master data event
+	untuk decrypt buat scan barcode hasil dari encryt di awal via kamera laptop
+	untuk plugin jquery bisa gunakan salah satu dari plugin dan xample di bawah:
+	1. https://github.com/schmich/instascan
+	2. https://belajarphp.net/membaca-qrcode-webcam-jquery/
+	3. https://www.jqueryscript.net/other/jQuery-Plugin-For-BarCode-QR-Code-Reader-WebCodeCam.html
+	4. http://www.bestjquery.com/demo/barcode-scanner/
+
+	Hasil dari scan barcode tersebut harus menyimpan data user yang telah di encrypt dengan attribute id
+	table untuk menyimpan data scan pada table 
+	"trans_event_users"
+		id
+		time
+		created_by
+		created_at
+		updated_by
+		updated_at
+
+	Untuk melakukan migration diusahakan samakan codingan migration sebelumnya dalam menentukan tipe data
+
+- Check API Login Jika Terdapat Error Dibenarkan.
+
