@@ -36,7 +36,9 @@ class QRCodeController extends Controller
         $data = json_decode($decrypted);
         $finalData=[];
         $finalData['user']=$data->user;
+        $user = User::find($data->user);
         $finalData['time']=$data->time;
-        return $finalData;
+        //return $finalData;
+        return $user;
     }
 }
