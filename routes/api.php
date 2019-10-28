@@ -30,12 +30,14 @@ Route::middleware(['auth:api'])->group(function () {
 Route::get('radio/statistic', 'LiveRadioVisitorController@statistic');
 Route::get('radio/increment', 'LiveRadioVisitorController@increment');
 Route::get('radio/decrement', 'LiveRadioVisitorController@decrement');
+
 Route::group(['namespace' => 'Api'], function () {
     Route::get('qr_code/encrypt/{user_id}','QRCodeController@encrypt');
     Route::get('qr_code/decrypt/{string}','QRCodeController@decrypt');
     Route::get('qr_code/image/{user_id}','QRCodeController@getQR');
 
 });
+
 Route::middleware(['verified'])->group(function () {
     Route::resource('banners', 'BannerController');
     Route::put('banners/{banner}/status', 'BannerController@changeStatus');

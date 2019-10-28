@@ -30,25 +30,24 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         try {
-            // dd($request->all());
             event(new Registered($user = $this->create($request->all())));
-            Mail::to($request->email)->send(new TestMail($this,'','',''));
-        // } catch (Swift_TransportException $e) {
-        //     if (isset($user)) {
-        //         $user->delete();
-        //     }
+             // Mail::to($request->email)->send(new TestMail($this,'','',''));
+        } catch (Swift_TransportException $e) {
+            if (isset($user)) {
+                $user->delete();
+            }
 
-        //     return response()->json([
-        //         'errors' => [
-        //             'status' => '500',
-        //             'title' => 'Internal Server Error',
-        //             'detail' => 'Invalid mail server configuration.',
-        //         ],
-        //     ], 500);
+            return response()->json([
+                'errors' => [
+                    'status' => '500',
+                    'title' => 'Internal Server Error',
+                    'detail' => 'Invalid mail server configuration.',
+                ],
+            ], 500);
         } catch (Exception $e) {
-            // if (isset($user)) {
-            //     $user->delete();
-            // }
+            if (isset($user)) {
+                $user->delete();
+            }
 
             return response()->json([
                 'errors' => [
