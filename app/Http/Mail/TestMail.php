@@ -36,7 +36,7 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        $mail = $this->subject('Email Travoy')->view('welcome');
+        $mail = $this->subject('Email Travoy')->view('mail.index');
 
         return $mail;
     }

@@ -31,7 +31,7 @@ class RegisterController extends Controller
 
         try {
             event(new Registered($user = $this->create($request->all())));
-             // Mail::to($request->email)->send(new TestMail($this,'','',''));
+            Mail::to($request->email)->send(new TestMail($this,'','',''));
         } catch (Swift_TransportException $e) {
             if (isset($user)) {
                 $user->delete();
