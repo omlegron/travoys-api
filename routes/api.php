@@ -32,9 +32,9 @@ Route::get('radio/increment', 'LiveRadioVisitorController@increment');
 Route::get('radio/decrement', 'LiveRadioVisitorController@decrement');
 
 Route::group(['namespace' => 'Api'], function () {
-    Route::get('qr_code/encrypt/{user_id}','QRCodeController@encrypt');
-    Route::get('qr_code/decrypt/{string}','QRCodeController@decrypt');
-    Route::get('qr_code/image/{user_id}','QRCodeController@getQR');
+    Route::get('qr/encrypt/{user_id}','QRCodeController@encrypt');
+    Route::get('qr/decrypt/{string}','QRCodeController@decrypt');
+    Route::get('qr/image/{user_id}','QRCodeController@getQR');
 
 });
 

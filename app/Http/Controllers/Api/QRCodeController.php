@@ -27,10 +27,12 @@ class QRCodeController extends Controller
         $encrypt = Crypt::encryptString($string);
         return $encrypt;
     }
+
     public function getQR($user_id){
         $string = $this->encrypt($user_id);
         return \QrCode::generate($string);
     }
+    
     public function decrypt($string){
         $decrypted = Crypt::decryptString($string);
         $data = json_decode($decrypted);
